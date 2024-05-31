@@ -6,7 +6,6 @@ const express = require("express");
 const fm = require("./filemgr");
 
 
-
 // Create the express http server
 const app = express();
 
@@ -35,7 +34,7 @@ app.post("/api", async (req,res) => {
   // try{
     let valid = await fm.WriteData(req.body);
     if(valid === true){
-      res.status(200).send('Data written successfully');
+      res.status(200).json("Data written successfully");
       return;
     } 
   // }
